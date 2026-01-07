@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .game-container {
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            padding: 10px;
+            background-color: #e4c690; /* 棋盘木色背景 */
+            border-radius: 5px;
+        }
+
+        canvas {
+            display: block;
+            cursor: pointer;
+            background-color: #e4c690;
+        }
+
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .status {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* 简单的胜负提示颜色 */
+        .status span.black { color: black; }
+        .status span.white { color: white; text-shadow: 0 0 2px black; }
+    </style>
+</head>
+<body>
+
+    <h1>五子棋对战</h1>
+
+    <div class="game-container">
+        <!-- 棋盘大小 450x450, 15x15网格 -->
+        <canvas id="chess" width="450" height="450"></canvas>
+    </div>
+
+    <div class="controls">
+        <div class="status" id="statusInfo">当前回合: <span class="black">黑棋</span></div>
+        <button onclick="restartGame()">重新开始</button>
+    </div>
+
+    <!-- 引入外部JS文件 -->
+    <script src="main.js"></script>
+</body>
+</html>
